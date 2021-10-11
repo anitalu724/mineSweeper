@@ -5,9 +5,9 @@ import Modal from './Modal';
 import { revealed } from '../util/reveal';
 import "../App.css"
 import Dashboard from './Dashboard';
-let row = 10;
-let col = 10;
-let bomb = 10;
+let row = 5;
+let col = 5;
+let bomb = 5;
 
 const Board = () => {
     const [grid, setGrid] = useState([]);
@@ -74,7 +74,7 @@ const Board = () => {
             let newRevealedBoard = revealed(newGrid, x, y, nonMineCount);
             setGrid(newRevealedBoard.arr);
             setNonMineCount(newRevealedBoard.newNonMinesCount);
-            if(newRevealedBoard.newNonMinesCount === 0 && remainFlagNum === 0){
+            if(newRevealedBoard.newNonMinesCount === 0){
                 console.log("win")
                 setGameOver(true);
                 setWin(true);
