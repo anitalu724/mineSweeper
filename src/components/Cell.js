@@ -1,0 +1,61 @@
+import React from "react";
+import "../App.css"
+
+export default function Cell({detail, updateFlag, revealCell}){
+    const cellStyle = {
+        background: detail.revealed ? 
+            detail.value === '💣' ? '#880000' : bombCheckPattern(detail.x, detail.y) : checkPattern(detail.x, detail.y),
+        color: numColorCode(detail.value),
+        cursor: 'pointer',
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex',
+        fontWeight: 'bold',
+        fontSize: 30,
+        border: detail.revealed ? "1.5px solid darkgrey" : "1.5px solid white",
+        
+    }
+//🚩
+
+    return (
+        <div>
+            <div 
+                onContextMenu = {(e) => updateFlag(e, detail.x, detail.y) }
+                onClick = {() => revealCell(detail.x, detail.y)}
+                style = {cellStyle}
+                className = "cellStyle"
+            >
+                {/* {console.log("cell", !detail.revealed && detail.flagged)} */}
+                {!detail.revealed && detail.flagged ? "🚩" : detail.revealed && detail.value !== 0 ? (detail.value === '💣' ? '💣' : detail.value) : ''}
+                {/* {data.flagged && !data.revealed ? ("🚩") : data.revealed && data.value !== 0 ? (data.value === "X" ? (<Circle />) : (data.value)) : ("")} */}
+            </div>
+        </div>
+    );
+}
+
+
+
+const bombCheckPattern = (x, y) => {
+    if(x % 2 === 0 && y % 2 === 0) return '#c0c0c0';
+    else if (x % 2 === 0 && y % 2 !== 0) return '#bbbbbb';
+    else if (x % 2 !== 0 && y % 2 === 0)  return '#bbbbbb';
+    else return '#c0c0c0';
+}
+
+const checkPattern = (x, y) => {
+    if(x % 2 === 0 && y % 2 === 0) return '#dddddd';
+    else if (x % 2 === 0 && y % 2 !== 0) return '#d0d0d0';
+    else if (x % 2 !== 0 && y % 2 === 0)  return '#d0d0d0';
+    else return '#dddddd';
+}
+
+const numColorCode = (num) => {
+    if(num === 1) return '#0307de';
+    else if(num === 2) return '#15760f';
+    else if(num === 3) return '#dc1410';
+    else if(num === 4) return '#02087e';
+    else if(num === 5) return '#630501';
+    else if(num === 6) return '#ec596c';
+    else if(num === 7) return '#edf451';
+    else if(num === 8) return '#56dddc';
+}

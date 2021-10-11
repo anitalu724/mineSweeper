@@ -1,0 +1,122 @@
+body{
+      font-family: 'Futura';
+}
+.App{
+      display: "flex";
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+}
+.boardWrapper{
+      align-items: center;
+      /* background-color: aqua; */
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      margin: 0 auto;
+      /* width: 500px; */
+      
+}
+.board{
+      /* background-color: darkblue; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+}
+.dashBoard{
+      background-color: darkgray;
+      /* width:408px; */
+      margin: 0 auto;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+}
+.dashBoard_col{
+      display: flex;
+      color: '#222222';
+      font-size: 25px;
+      justify-content: center;
+      align-items: center;
+}
+.icon{
+      margin: 0;
+      padding: 0 5px;
+}
+#dashBoard_col1{
+      display:inline;
+      margin: 0 auto;
+      text-align: center;
+}
+#dashBoard_col2{
+      display:inline;
+      margin: 0 auto;
+      text-align: center;
+}
+
+
+
+.cellStyle {
+      width : 40px;
+      height : 40px;
+      border: "1px solid white";
+      justify-content: "center";
+      align-items: "center";
+      display: "flex";
+      cursor: 'pointer';
+      font-size: 25;
+};
+.modal{
+      z-index: 1;
+      overflow: auto;
+      /* width: 100%; */
+}
+.Modal_content{
+      /* background-color: antiquewhite; */
+      margin: 20% auto;
+      /* margin-bottom: 0%; */
+      /* padding: 20px; */
+      /* height: 100%; */
+      width: 100%;
+
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+#gameOverImage{
+      opacity: 100;
+      z-index: 4;
+      height: 100%;
+      max-width: 100%;
+      margin: auto;
+      background: lightblue;
+      background-repeat: repeat-x;
+      position: relative;
+      padding: 20px;
+      font-size: 30px;
+      color: darkblue;
+}
+
+.tryAgain{
+      max-width: 100%;
+      cursor: pointer;
+      /* margin: 0 50px; */
+      border-radius: 7px;
+      background-color: darkgreen;
+      color: rgb(158, 255, 158);
+      padding: 10px;
+      font-weight: 700;
+      max-width: 100%;
+}
+.tryAgain:hover{
+      cursor: pointer;
+      background-color: #49dc90;
+      color: darkgreen;
+}
+
+.clock{
+      height: 40px;
+      width: 40px;
+
+}
