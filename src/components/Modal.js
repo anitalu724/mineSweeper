@@ -23,6 +23,7 @@ export default function Modal({restartGame, win}){
             <div className = "Modal_content">
                 {win ? <div id = "gameOverImage">WIN</div> : <div id = "gameOverImage">Game Over</div>}
                 {win ? <div className = "tryAgain" onClick = {() => restartGame()}>New Game</div> : <div className = "tryAgain" onClick = {() => restartGame()}>Try Again</div>}
+                <div className = "tryAgain">Back to Home</div>
             </div>
         </div>
 

@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import createBoard from '../util/createBoard';
 import Cell from './Cell';
 import Modal from './Modal';
 import { revealed } from '../util/reveal';
 import "../App.css"
 import Dashboard from './Dashboard';
-let row = 5;
-let col = 5;
-let bomb = 5;
 
-const Board = () => {
+const Board = ({ROW, COL, BOMBSIZE}) => {
     const [grid, setGrid] = useState([]);
     const [nonMineCount, setNonMineCount] = useState(0);
     const [mineLocations, setMineLocation] = useState([]);
@@ -24,9 +21,9 @@ const Board = () => {
 
     // Creating a board
     const freshBoard = () => {
-        const newBoard = createBoard(row, col, bomb);
-        setNonMineCount(row* col - bomb);
-        setRemainFlagNum(bomb);
+        const newBoard = createBoard(ROW, COL, BOMBSIZE);
+        setNonMineCount(ROW * COL - BOMBSIZE);
+        setRemainFlagNum(BOMBSIZE);
         setMineLocation(newBoard.mineLocation);
         setGrid(newBoard.board);
     }
@@ -58,7 +55,7 @@ const Board = () => {
 
     // Reveal Cell
     const revealCell = (x, y) => {
-        if(grid[x][y].revealed || gameOver) return;
+        if(grid[x][y].revealed || gameOver || grid[x][y].flagged) return;
         
         let newGrid = JSON.parse(JSON.stringify(grid));
         // Hit the mine!!
@@ -85,7 +82,7 @@ const Board = () => {
     return(
         <div className='boardWrapper'>
             <div className="board">
-                <Dashboard remainFlagNum = {remainFlagNum} gameOver = {gameOver} col = {col}/>
+                <Dashboard remainFlagNum = {remainFlagNum} gameOver = {gameOver} col = {COL}/>
                 {/* {gameOver && win && <p>WIN</p>} */}
                 {gameOver && <Modal restartGame = {restartGame} win= {win}/>}
                 {

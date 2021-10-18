@@ -95,7 +95,7 @@ body{
       position: relative;
       padding: 20px;
       font-size: 30px;
-      color: darkblue;
+      color: rgb(0, 0, 77);
 }
 
 .tryAgain{
@@ -120,3 +120,102 @@ body{
       width: 40px;
 
 }
+
+
+.StartWrapper{
+      /* background-color: lightpink; */
+      height: 100vh;
+      width: 100vw;
+      margin: 2% auto;
+      
+}
+.title{
+      font-size: 75px;
+      font-family: 'Futura';
+      font-weight: 900;
+      padding-top: 50px;
+}
+.btn{
+      font-size: 30px;
+      padding: 10px;
+      border: transparent;
+      border-radius: 50px;
+      margin: 20px auto;
+      background-color: lightgray;
+}
+
+.btn:hover{
+      cursor: pointer;
+      background-color: lightblue;
+      font-weight: 700;
+}
+.controlWrapper{
+      background-color: lightblue;
+      border-radius: 10px;
+      padding: 20px;
+}
+
+.controlPanel{
+      display: flex;
+      justify-content: center;
+}
+.error{
+      width: 100%;
+      color: red;
+      font-size: 20px;
+      font-weight: 300;
+}
+
+.controlCol{
+      display: inline-block;
+      width: 40%;
+      /* background-color: aqua; */
+      /* border: 1px solid red; */
+}
+.inputSlider{
+      outline: 0;
+      border: 0;
+      border-radius: 500px;
+
+}
+.controlTitle{
+      font-size: 25px;
+      color: #0a0a30;
+}
+
+input[type="range"] {
+      outline: 0;
+      border: 0;
+      border-radius: 500px;
+      width: 400px;
+      max-width: 100%;
+      margin: 24px 0 16px;
+      transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+      input[type='range'] {
+        overflow: hidden;
+        width: 400px;
+        -webkit-appearance: none;
+        background-color: lightgray;
+      }
+      
+      input[type='range']::-webkit-slider-runnable-track {
+        height: 10px;
+        -webkit-appearance: none;
+        color: red;
+        /* margin-top: 10px; */
+      }
+      
+      input[type='range']::-webkit-slider-thumb {
+        width: 10px;
+        -webkit-appearance:none;
+        height: 10px;
+        cursor: ew-resize;
+        background: #742222;
+        box-shadow: -400px 0 0 400px rgb(0, 0, 77);
+      }
+  
+  }
