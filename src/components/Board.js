@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import createBoard from '../util/createBoard';
 import Cell from './Cell';
 import Modal from './Modal';
 import { revealed } from '../util/reveal';
-import "../App.css"
+import './css/Board.css'
 import Dashboard from './Dashboard';
 
-const Board = ({ROW, COL, BOMBSIZE, BACKTOHOME}) => {
+const Board = ({BOARDSIZE, BOMBSIZE, BACKTOHOME}) => {
     const [grid, setGrid] = useState([]);
     const [nonMineCount, setNonMineCount] = useState(0);
     const [mineLocations, setMineLocation] = useState([]);
@@ -21,8 +21,8 @@ const Board = ({ROW, COL, BOMBSIZE, BACKTOHOME}) => {
 
     // Creating a board
     const freshBoard = () => {
-        const newBoard = createBoard(ROW, COL, BOMBSIZE);
-        setNonMineCount(ROW * COL - BOMBSIZE);
+        const newBoard = createBoard(BOARDSIZE, BOARDSIZE, BOMBSIZE);
+        setNonMineCount(BOARDSIZE * BOARDSIZE - BOMBSIZE);
         setRemainFlagNum(BOMBSIZE);
         setMineLocation(newBoard.mineLocation);
         setGrid(newBoard.board);
@@ -80,23 +80,27 @@ const Board = ({ROW, COL, BOMBSIZE, BACKTOHOME}) => {
     }
 
     return(
-        <div className='boardWrapper'>
-            <div className="board">
-                <Dashboard remainFlagNum = {remainFlagNum} gameOver = {gameOver} col = {COL}/>
-                {gameOver && <Modal restartGame = {restartGame} backToHome = {BACKTOHOME} win= {win}/>}
-                {
-                    grid.map((singleRow, index1) => {
-                        return (
-                            <div style = {{display: "flex"}} key = {index1}>
-                                {singleRow.map((singleBlock, index2) => {
-                                    return (
-                                        <Cell detail = {singleBlock} updateFlag = {updateFlag} revealCell = {revealCell} key = {index2}/>
-                                    );
-                                })}
-                            </div>
-                        );
-                    })
-                }
+        <div className='boardPage'>
+            <div className="boardWrapper">
+            {gameOver && <Modal restartGame = {restartGame} backToHome = {BACKTOHOME} win= {win}/>}
+                <div className = 'boardContainer'>
+                    <Dashboard remainFlagNum = {remainFlagNum} gameOver = {gameOver}/>
+                    {
+                        grid.map((singleRow, index1) => {
+                            return (
+                                <div style = {{display: "flex"}} key = {index1}>
+                                    {singleRow.map((singleBlock, index2) => {
+                                        return (
+                                            <Cell detail = {singleBlock} updateFlag = {updateFlag} revealCell = {revealCell} key = {index2}/>
+                                        );
+                                    })}
+                                </div>
+                            );
+                        })
+                    }
+                </div>
+                
+                
             </div>
         </div>
     ); 

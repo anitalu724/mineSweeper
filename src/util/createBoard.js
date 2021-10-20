@@ -32,25 +32,25 @@ export default (row, col, bombs) => {
 
 
     // Add Numbers
-    for(let roww = 0; roww < row; roww++){
-        for(let coll = 0; coll < col; coll++){
-            if (board[roww][coll].value === '💣') continue;
+    for(let r = 0; r < row; r++){
+        for(let c = 0; c < col; c++){
+            if (board[r][c].value === '💣') continue;
             // Top
-            if (roww > 0 && board[roww - 1][coll].value === '💣') board[roww][coll].value++;
+            if (r > 0 && board[r - 1][c].value === '💣') board[r][c].value++;
             // Top Right
-            if (roww > 0 && coll < col - 1 && board[roww - 1][coll + 1].value === '💣') board[roww][coll].value++;
+            if (r > 0 && c < col - 1 && board[r - 1][c + 1].value === '💣') board[r][c].value++;
             // Right
-            if (coll < col - 1 && board[roww][coll + 1].value === '💣') board[roww][coll].value++;
+            if (c < col - 1 && board[r][c + 1].value === '💣') board[r][c].value++;
             // Bottom Right
-            if (roww < row - 1 && coll < col - 1 && board[roww + 1][coll + 1].value === '💣') board[roww][coll].value++;
+            if (r < row - 1 && c < col - 1 && board[r + 1][c + 1].value === '💣') board[r][c].value++;
             // Bottom
-            if (roww < row - 1 && board[roww + 1][coll].value === '💣') board[roww][coll].value++;
+            if (r < row - 1 && board[r + 1][c].value === '💣') board[r][c].value++;
             // Bottom Left
-            if (roww < row -1 && coll > 0 && board[roww + 1][coll - 1].value === '💣') board[roww][coll].value++;
+            if (r < row -1 && c > 0 && board[r + 1][c - 1].value === '💣') board[r][c].value++;
             // Left
-            if (coll > 0 && board[roww][coll - 1].value === '💣') board[roww][coll].value++;
+            if (c > 0 && board[r][c - 1].value === '💣') board[r][c].value++;
             // Top Left
-            if (roww > 0 && coll > 0 && board[roww - 1][coll -1].value === '💣') board[roww][coll].value++;
+            if (r > 0 && c > 0 && board[r - 1][c -1].value === '💣') board[r][c].value++;
 
         }
     }

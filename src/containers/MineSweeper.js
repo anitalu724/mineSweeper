@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../App.css';
+import './MineSweeper.css';
 import Board from '../components/Board'
 import HomePage from '../components/HomePage'
 
@@ -19,12 +19,14 @@ const MineSweeper = () => {
     }
     const backToHomeOnClick = () => {
         setStartGame(false);
+        setMineNum(10);
+        setBoardSize(5);
     }
 
     return( 
-        <div className='App'>   
+        <div className='mineSweeper'>   
             {startGame ? 
-                <Board ROW = {boardSize} COL = {boardSize} BOMBSIZE = {mineNum} BACKTOHOME = {backToHomeOnClick}/> 
+                <Board BOARDSIZE = {boardSize} BOMBSIZE = {mineNum} BACKTOHOME = {backToHomeOnClick}/> 
                 :
                 <HomePage startGameOnClick = {startGameOnClick} mineNumOnChange = {mineNumOnChange} boardSizeOnChange = {boardSizeOnChange} mineNum = {mineNum} boardSize = {boardSize}/>
             } 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
-import "../App.css"
+import "./css/Dashboard.css"
 let timeIntervalId;
 
-export default function Dashboard({remainFlagNum, gameOver, sendTime, col}){
+export default function Dashboard({remainFlagNum, gameOver, sendTime}){
     let [time, setTime] = useState(0);
     let [sTime, setSTime] = useState(0);
 
@@ -27,10 +27,10 @@ export default function Dashboard({remainFlagNum, gameOver, sendTime, col}){
 
 
     return (
-        <div className = "dashBoard" style = {{width: col*40-22+col*3}}>
+        <div className = "dashBoard" >
             <div id = 'dashBoard_col1' >
                 <div className = 'dashBoard_col'>
-                    <p className = 'icon'>🚩 </p>
+                    <p className = 'icon'>🚩</p>
                     {remainFlagNum}
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './Modal.css'
+import './css/Modal.css'
 
 export default function Modal({restartGame, backToHome, win}){
     const [render, setRender] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './HomePage.css';
+import './css/HomePage.css';
 
 
 const HomePage = ({startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNum, boardSize}) => {
@@ -41,7 +41,7 @@ const HomePage = ({startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNum
                             </div>
                             <div className = "controlCol">
                                 <p className = 'controlTitle'>Board Size (n×n)</p>
-                                <input id = 'boardSize' type='range' min='1' max='25' defaultValue='5'  step='1' onChange = {({ target: { value: num } }) => {boardSizeOnChange(num);  checkError(1, num);}}/> 
+                                <input id = 'boardSize' type='range' min='1' max='20' defaultValue='5'  step='1' onChange = {({ target: { value: num } }) => {boardSizeOnChange(num);  checkError(1, num);}}/> 
                                 <p className = 'controlNum' style = {{color: (error) ? '#880000' : '#0f0f4b'}}>{boardSize}</p>
                             </div>
                           </div>

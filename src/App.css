@@ -1,83 +1,30 @@
 *{
       font-family: 'Futura';
 }
+html, body{
+      height: 100%;
+}
 .App{
       display: "flex";
       align-items: center;
       justify-content: center;
       text-align: center;
 }
-.boardWrapper{
-      align-items: center;
-      /* background-color: aqua; */
-      height: 100%;
-      width: 100%;
-      justify-content: center;
-      margin: 0 auto;
-      /* width: 500px; */
-      
-}
-.board{
-      /* background-color: darkblue; */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-}
-.dashBoard{
-      background-color: darkgray;
-      /* width:408px; */
-      margin: 0 auto;
-      padding: 10px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-}
-.dashBoard_col{
-      display: flex;
-      color: '#222222';
-      font-size: 25px;
-      justify-content: center;
-      align-items: center;
-}
-.icon{
-      margin: 0;
-      padding: 0 5px;
-}
-#dashBoard_col1{
-      display:inline;
-      margin: 0 auto;
-      text-align: center;
-}
-#dashBoard_col2{
-      display:inline;
-      margin: 0 auto;
-      text-align: center;
-}
-
-
 
 .cell{
-      width : 40px;
-      height : 40px;
-      /* border: "1px solid white"; */
+      width : 30px;
+      height : 30px;
       justify-content: "center";
       align-items: "center";
       display: "flex";
-      cursor: 'pointer';
-      font-size: 30px;
+      font-size: 25px;
       font-weight: bold;
-      
-      /* border:3px outset darkgrey; */
-    
-      
+      cursor: pointer;
 };
-
-
-.clock{
-      height: 40px;
-      width: 40px;
-
+.cell:hover{
+      cursor: pointer;
 }
+
+
 
 
