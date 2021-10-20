@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "../App.css"
+import './Modal.css'
 
-export default function Modal({restartGame, win}){
+export default function Modal({restartGame, backToHome, win}){
     const [render, setRender] = useState(false);
     useEffect(() => {
         setTimeout(() => {
@@ -10,21 +10,16 @@ export default function Modal({restartGame, win}){
     }, []);
 
     return (
-        <div className = "modal" 
-            style = {{
-                opacity: render ? 1 : 0,
-                height: "100%",
-                width: "70%",
-                position: "absolute",
-                background: "rgba(0, 0, 0, 0.5)",
-                // border: "1px solid red"
-
-            }}>
-            <div className = "Modal_content">
-                {win ? <div id = "gameOverImage">WIN</div> : <div id = "gameOverImage">Game Over</div>}
-                {win ? <div className = "tryAgain" onClick = {() => restartGame()}>New Game</div> : <div className = "tryAgain" onClick = {() => restartGame()}>Try Again</div>}
-                <div className = "tryAgain">Back to Home</div>
+        <div className = 'modal' style = {{ opacity: render ? 1 : 0 }}>
+            <div className = 'modalWrapper'></div>
+            <div className = 'modalContent'>
+                {win ? <div className = 'modalResult'>WIN</div> : <div className = 'modalResult'>Game Over</div>}
+                <div className='modalBtnWrapper'>
+                    {win ? <div className = 'modalBtn' onClick = {() => restartGame()}>New Game</div> : <div className = 'modalBtn' onClick = {() => restartGame()}>Try Again</div>}
+                    <div className = 'modalBtn' onClick = {() => backToHome()}>Back to Home</div>
+                </div>
             </div>
+            <div className = 'modalWrapper'></div>
         </div>
 
     );

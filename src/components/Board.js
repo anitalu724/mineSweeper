@@ -6,7 +6,7 @@ import { revealed } from '../util/reveal';
 import "../App.css"
 import Dashboard from './Dashboard';
 
-const Board = ({ROW, COL, BOMBSIZE}) => {
+const Board = ({ROW, COL, BOMBSIZE, BACKTOHOME}) => {
     const [grid, setGrid] = useState([]);
     const [nonMineCount, setNonMineCount] = useState(0);
     const [mineLocations, setMineLocation] = useState([]);
@@ -83,8 +83,7 @@ const Board = ({ROW, COL, BOMBSIZE}) => {
         <div className='boardWrapper'>
             <div className="board">
                 <Dashboard remainFlagNum = {remainFlagNum} gameOver = {gameOver} col = {COL}/>
-                {/* {gameOver && win && <p>WIN</p>} */}
-                {gameOver && <Modal restartGame = {restartGame} win= {win}/>}
+                {gameOver && <Modal restartGame = {restartGame} backToHome = {BACKTOHOME} win= {win}/>}
                 {
                     grid.map((singleRow, index1) => {
                         return (
@@ -99,7 +98,6 @@ const Board = ({ROW, COL, BOMBSIZE}) => {
                     })
                 }
             </div>
-            
         </div>
     ); 
 

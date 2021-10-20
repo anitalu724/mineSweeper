@@ -6,16 +6,8 @@ export default function Cell({detail, updateFlag, revealCell}){
         background: detail.revealed ? 
             detail.value === '💣' ? '#880000' : bombCheckPattern(detail.x, detail.y) : checkPattern(detail.x, detail.y),
         color: numColorCode(detail.value),
-        cursor: 'pointer',
-        alignItems: 'center',
-        justifyContent: 'center',
-        display: 'flex',
-        fontWeight: 'bold',
-        fontSize: 30,
-        border: detail.revealed ? "1.5px solid darkgrey" : "1.5px solid white",
-        
+        border: detail.revealed ? "2px inset darkgrey" : "2px outset white",
     }
-//🚩
 
     return (
         <div>
@@ -23,11 +15,9 @@ export default function Cell({detail, updateFlag, revealCell}){
                 onContextMenu = {(e) => updateFlag(e, detail.x, detail.y) }
                 onClick = {() => revealCell(detail.x, detail.y)}
                 style = {cellStyle}
-                className = "cellStyle"
+                className = 'cell'
             >
-                {/* {console.log("cell", !detail.revealed && detail.flagged)} */}
                 {!detail.revealed && detail.flagged ? "🚩" : detail.revealed && detail.value !== 0 ? (detail.value === '💣' ? '💣' : detail.value) : ''}
-                {/* {data.flagged && !data.revealed ? ("🚩") : data.revealed && data.value !== 0 ? (data.value === "X" ? (<Circle />) : (data.value)) : ("")} */}
             </div>
         </div>
     );
