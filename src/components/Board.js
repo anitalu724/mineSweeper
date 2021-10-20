@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import createBoard from '../util/createBoard';
 import Cell from './Cell';
 import Modal from './Modal';
+import Dashboard from './Dashboard';
+import createBoard from '../util/createBoard';
 import { revealed } from '../util/reveal';
 import './css/Board.css'
-import Dashboard from './Dashboard';
+
 
 const Board = ({BOARDSIZE, BOMBSIZE, BACKTOHOME}) => {
     const [grid, setGrid] = useState([]);
