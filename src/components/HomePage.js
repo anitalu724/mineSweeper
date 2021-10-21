@@ -28,7 +28,7 @@ const HomePage = ({startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNum
       <div className = 'HomeWrapper'>
           <p className = 'title'> MineSweeper </p>
             <button className = 'btn' onClick = {startOnClick}>Start Game</button>
-                <div>
+                <div className = 'controlContainer'>
                     <button className = 'btn' onClick = {diffOnClick}>Difficulty Adjustment</button>
                     {showPanel ? 
                         <div className='controlWrapper'> 
@@ -36,12 +36,12 @@ const HomePage = ({startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNum
                           <div className = "controlPanel">
                             <div className = "controlCol">
                                 <p className = 'controlTitle'>Mines Number</p>
-                                <input id = 'mineNum' type='range' min='1' max='50' defaultValue='10'   step='1' onChange = {({ target: { value: num } }) => {mineNumOnChange(num);  checkError(0, num);}}/>
+                                <input  type='range' min='1' max='50' defaultValue='10'   step='1' onChange = {({ target: { value: num } }) => {mineNumOnChange(num);  checkError(0, num);}}/>
                                 <p className = 'controlNum' style = {{color: (error) ? '#880000' : '#0f0f4b'}}>{mineNum}</p>
                             </div>
                             <div className = "controlCol">
                                 <p className = 'controlTitle'>Board Size (n×n)</p>
-                                <input id = 'boardSize' type='range' min='1' max='20' defaultValue='5'  step='1' onChange = {({ target: { value: num } }) => {boardSizeOnChange(num);  checkError(1, num);}}/> 
+                                <input type='range' min='1' max='20' defaultValue='5'  step='1' onChange = {({ target: { value: num } }) => {boardSizeOnChange(num);  checkError(1, num);}}/> 
                                 <p className = 'controlNum' style = {{color: (error) ? '#880000' : '#0f0f4b'}}>{boardSize}</p>
                             </div>
                           </div>

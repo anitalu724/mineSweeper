@@ -31,6 +31,9 @@ body{
     color: lightblue;
     border: 3px solid transparent;
 }
+.controlContainer{
+    
+}
 .controlWrapper{
     background-color: lightblue;
     border-radius: 10px;
