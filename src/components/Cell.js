@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css"
+import "./css/Cell.css"
 
 export default function Cell({detail, updateFlag, revealCell}){
     const cellStyle = {
