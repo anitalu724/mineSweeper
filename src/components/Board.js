@@ -62,7 +62,8 @@ const Board = ({BOARDSIZE, BOMBSIZE, BACKTOHOME}) => {
         // Hit the mine!!
         if(newGrid[x][y].value === '💣'){
             for(let i = 0; i < mineLocations.length; i++){
-                newGrid[mineLocations[i][0]][mineLocations[i][1]].revealed = true;
+                if(!newGrid[mineLocations[i][0]][mineLocations[i][1]].flagged)
+                    newGrid[mineLocations[i][0]][mineLocations[i][1]].revealed = true;
             }
             setGrid(newGrid);
             setGameOver(true);

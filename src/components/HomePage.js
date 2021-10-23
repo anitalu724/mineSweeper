@@ -13,7 +13,7 @@ const HomePage = ({startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNum
     const startOnClick = () => {
       console.log("startOnClick")
       if(!error) startGameOnClick();
-      else console.log("Error value: cannot start game!")
+      else console.log("Error value: cannot start game!");
     }
 
     const checkError = (idx, num) => {
