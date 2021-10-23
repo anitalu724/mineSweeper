@@ -42,6 +42,7 @@ const Board = ({BOARDSIZE, BOMBSIZE, BACKTOHOME}) => {
         // Deep copy of a state
         let newGrid = JSON.parse(JSON.stringify(grid));
         let newFlagNum = remainFlagNum;
+        if(newGrid[x][y].revealed === true) return;
         if(newGrid[x][y].flagged !== true &&  newGrid[x][y].revealed !== true){
             newGrid[x][y].flagged = true;
             newFlagNum--;
