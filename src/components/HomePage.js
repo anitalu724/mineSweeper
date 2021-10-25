@@ -26,7 +26,7 @@ const HomePage = ({startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNum
 
     return(
       <div className = 'HomeWrapper'>
-          <p className = 'title'> MineSweeper </p>
+          <p className = 'title'>MineSweeper</p>
             <button className = 'btn' onClick = {startOnClick}>Start Game</button>
                 <div className = 'controlContainer'>
                     <button className = 'btn' onClick = {diffOnClick}>Difficulty Adjustment</button>
