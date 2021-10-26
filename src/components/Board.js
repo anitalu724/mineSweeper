@@ -81,7 +81,6 @@ const Board = ({BOARDSIZE, BOMBSIZE, BACKTOHOME}) => {
             }
         }
     }
-
     return(
         <div className='boardPage'>
             <div className="boardWrapper">
@@ -90,11 +89,12 @@ const Board = ({BOARDSIZE, BOMBSIZE, BACKTOHOME}) => {
                     <Dashboard remainFlagNum = {remainFlagNum} gameOver = {gameOver}/>
                     {
                         grid.map((singleRow, index1) => {
+                            const Id = 'row'+index1.toString() 
                             return (
-                                <div style = {{display: "flex"}} key = {index1}>
+                                <div style = {{display: "flex"}} key = {index1} id={Id}>
                                     {singleRow.map((singleBlock, index2) => {
                                         return (
-                                            <Cell detail = {singleBlock} updateFlag = {updateFlag} revealCell = {revealCell} key = {index2}/>
+                                            <Cell rowIdx = {index1} colIdx = {index2} detail = {singleBlock} updateFlag = {updateFlag} revealCell = {revealCell} key = {index2}/>
                                         );
                                     })}
                                 </div>

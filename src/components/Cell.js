@@ -1,25 +1,26 @@
 import React from "react";
 import "./css/Cell.css"
 
-export default function Cell({detail, updateFlag, revealCell}){
+export default function Cell({rowIdx, colIdx, detail, updateFlag, revealCell}){
     const cellStyle = {
         background: detail.revealed ? 
             detail.value === '💣' ? '#880000' : bombCheckPattern(detail.x, detail.y) : checkPattern(detail.x, detail.y),
         color: numColorCode(detail.value),
         border: detail.revealed ? "2px inset darkgrey" : "2px outset white",
     }
-
+    const Id = rowIdx.toString() +'-'+ colIdx.toString()
     return (
-        <div>
+       
             <div 
                 onContextMenu = {(e) => updateFlag(e, detail.x, detail.y) }
                 onClick = {() => revealCell(detail.x, detail.y)}
                 style = {cellStyle}
                 className = 'cell'
+                id = {Id}
             >
                 {!detail.revealed && detail.flagged ? "🚩" : detail.revealed && detail.value !== 0 ? (detail.value === '💣' ? '💣' : detail.value) : ''}
             </div>
-        </div>
+        
     );
 }
 
