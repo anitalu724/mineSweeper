@@ -6,7 +6,7 @@ import HomePage from '../components/HomePage'
 const MineSweeper = () => {
     const [startGame, setStartGame] = useState(false);
     const [mineNum, setMineNum] = useState(10);
-    const [boardSize, setBoardSize] = useState(5);
+    const [boardSize, setBoardSize] = useState(8);
     
     const startGameOnClick = () => {
         setStartGame(true);
@@ -20,7 +20,7 @@ const MineSweeper = () => {
     const backToHomeOnClick = () => {
         setStartGame(false);
         setMineNum(10);
-        setBoardSize(5);
+        setBoardSize(8);
     }
 
     return( 
