@@ -1,4 +1,4 @@
-describe('Todo1: HomePage Start HTML', () => {
+describe('Todo1: HomePage Start HTML (11%)', () => {
     // 1st test
     it('HomeWrapper, title and start button exists exist (3%)', () => {
       cy.visit('/')

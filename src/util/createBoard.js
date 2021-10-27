@@ -1,3 +1,5 @@
+import randomNum from "./randomFixSeed";
+
 export default (row, col, bombs) => {
     let board = [];
     let mineLocation = [];
@@ -56,7 +58,3 @@ export default (row, col, bombs) => {
     }
     return {board, mineLocation};
 };
-
-function randomNum(min = 0, max){
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}

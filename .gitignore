@@ -1,3 +1,8 @@
 node_modules
 yarn.lock
 package-lock.json
+.DS_Store
+
+cypress/.DS_Store
+cypress/intergration/.DS_Store
+cypress/videos
