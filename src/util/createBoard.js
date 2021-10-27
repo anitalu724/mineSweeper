@@ -1,54 +1,70 @@
 import randomNum from "./randomFixSeed";
 
-export default (row, col, bombs) => {
+export default (boardSize, mineNum) => {
     let board = [];
-    let mineLocation = [];
+    let mineLocations = [];
+
+    // Print Board function (For testing)
+    const printBoard = () => {
+        console.log("Current Board")
+        for(let x = 0; x < boardSize; x++){
+            console.log(board[x].map((x) => {
+                return(x.value !=='💣' ? x.value.toString()+" " : x.value)
+            }))
+        }
+    }
 
     // Create a blank board
-    for(let x = 0; x < row; x++){
+    for(let x = 0; x < boardSize; x++){
         let subCol = [];
-        for(let y = 0; y < col; y++){
+        for(let y = 0; y < boardSize; y++){
             subCol.push({
-                value: 0,
-                revealed: false,
-                x: x,
-                y: y,
-                flagged: false,
+                value: 0,                   // To store the number of mines around the cell.
+                revealed: false,            // To store if the cell is revealed.
+                x: x,                       // To store the x coordinate (the column index) of the cell.
+                y: y,                       // To store the y coordinate (the row index) of the cell.
+                flagged: false,             // To store if the cell is flagged.
             });
         }
         board.push(subCol);
     }
     
+    // Random bombs locations
+    let mineCount = 0;
+    while(mineCount < mineNum){
+        let x = randomNum(0, boardSize - 1);
+        let y = randomNum(0, boardSize - 1);
 
-    let bombsCount = 0;
-    while(bombsCount < bombs){
-        let x = randomNum(0, row - 1);
-        let y = randomNum(0, col - 1);
-
-        if(board[x][y].value === 0){
-            board[x][y].value = '💣';
-            mineLocation.push([x, y]);
-            bombsCount++;
+        if(board[x][y].value === 0){            // Check this location has not been located a mine.
+            board[x][y].value = '💣';           // Change the value of the cell to '💣'
+            mineLocations.push([x, y]);
+            mineCount++;
         }
     }
 
+    {/* -- TODO 3 -- */}
+    {/* Useful Hints: Calculate and update the value of each cell in the board. The value means the number of mines adjacent to the cell. */}
+    {/* Reminder: Some cells in the board do not have "Top" position, some do not have "Top-Right" position .... */}
+    {/* Warning: The value of any cell will not be bigger than 8 logically. */}
+    {/* Testing: printBoard() */}
+
 
     // Add Numbers
-    for(let r = 0; r < row; r++){
-        for(let c = 0; c < col; c++){
+    for(let r = 0; r < boardSize; r++){
+        for(let c = 0; c < boardSize; c++){
             if (board[r][c].value === '💣') continue;
             // Top
             if (r > 0 && board[r - 1][c].value === '💣') board[r][c].value++;
             // Top Right
-            if (r > 0 && c < col - 1 && board[r - 1][c + 1].value === '💣') board[r][c].value++;
+            if (r > 0 && c < boardSize - 1 && board[r - 1][c + 1].value === '💣') board[r][c].value++;
             // Right
-            if (c < col - 1 && board[r][c + 1].value === '💣') board[r][c].value++;
+            if (c < boardSize - 1 && board[r][c + 1].value === '💣') board[r][c].value++;
             // Bottom Right
-            if (r < row - 1 && c < col - 1 && board[r + 1][c + 1].value === '💣') board[r][c].value++;
+            if (r < boardSize - 1 && c < boardSize - 1 && board[r + 1][c + 1].value === '💣') board[r][c].value++;
             // Bottom
-            if (r < row - 1 && board[r + 1][c].value === '💣') board[r][c].value++;
+            if (r < boardSize - 1 && board[r + 1][c].value === '💣') board[r][c].value++;
             // Bottom Left
-            if (r < row -1 && c > 0 && board[r + 1][c - 1].value === '💣') board[r][c].value++;
+            if (r < boardSize -1 && c > 0 && board[r + 1][c - 1].value === '💣') board[r][c].value++;
             // Left
             if (c > 0 && board[r][c - 1].value === '💣') board[r][c].value++;
             // Top Left
@@ -56,5 +72,5 @@ export default (row, col, bombs) => {
 
         }
     }
-    return {board, mineLocation};
+    return { board, mineLocations };
 };

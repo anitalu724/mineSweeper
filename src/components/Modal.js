@@ -1,3 +1,11 @@
+/****************************************************************************
+  FileName      [ Modal.js ]
+  PackageName   [ src/components ]
+  Author        [ Cheng-Hua Lu, Chin-Yi Cheng ]
+  Synopsis      [ This file generates the Modal component. ]
+  Copyright     [ 2021 10 ]
+****************************************************************************/
+
 import React, { useEffect, useState } from "react";
 import './css/Modal.css'
 
@@ -10,6 +18,8 @@ export default function Modal({restartGame, backToHome, win}){
     }, []);
 
     return (
+        /* -- TODO 6 -- */
+        /* Useful Hint: style = {{opacity: 1 or 0 }} */
         <div className = 'modal' style = {{ opacity: render ? 1 : 0 }}>
             <div className = 'modalWrapper'></div>
             <div className = 'modalContent'>
@@ -21,6 +31,5 @@ export default function Modal({restartGame, backToHome, win}){
             </div>
             <div className = 'modalWrapper'></div>
         </div>
-
     );
 }

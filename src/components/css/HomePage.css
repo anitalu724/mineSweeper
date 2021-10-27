@@ -1,3 +1,11 @@
+/****************************************************************************
+  FileName      [ HomePage.css ]
+  PackageName   [ src/components/css ]
+  Author        [ Cheng-Hua Lu, Chin-Yi Cheng ]
+  Synopsis      [ This file set the style of HomePage. ]
+  Copyright     [ 2021 10 ]
+****************************************************************************/
+
 body{
     font-family: 'Futura';
 }

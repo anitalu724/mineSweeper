@@ -1,3 +1,11 @@
+/****************************************************************************
+  FileName      [ Dashnoard.js ]
+  PackageName   [ src/components ]
+  Author        [ Cheng-Hua Lu, Chin-Yi Cheng ]
+  Synopsis      [ This file generates the Dashboard. ]
+  Copyright     [ 2021 10 ]
+****************************************************************************/
+
 import React, { useEffect, useState } from 'react';
 import "./css/Dashboard.css"
 let timeIntervalId;
@@ -5,6 +13,9 @@ let timeIntervalId;
 export default function Dashboard({remainFlagNum, gameOver, sendTime}){
     let [time, setTime] = useState(0);
     let [sTime, setSTime] = useState(0);
+
+    {/* -- TODO 8 -- */}
+    {/* Useful Hint: Try to understand the difference between time and sTime. */}
 
     useEffect(() => {
       if (time > 0 && gameOver) {

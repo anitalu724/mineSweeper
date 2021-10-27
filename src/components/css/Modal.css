@@ -1,3 +1,11 @@
+/****************************************************************************
+  FileName      [ Modal.css ]
+  PackageName   [ src/components/css ]
+  Author        [ Cheng-Hua Lu, Chin-Yi Cheng ]
+  Synopsis      [ This file set the style of Modal. ]
+  Copyright     [ 2021 10 ]
+****************************************************************************/
+
 *{
     font-family: 'Futura';
 }
@@ -33,7 +41,6 @@
     margin: auto;
     font-size: 50px;
     font-weight: 700;
-
     height: 50%;
     display: flex;
     align-items: center;

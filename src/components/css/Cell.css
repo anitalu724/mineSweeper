@@ -1,3 +1,11 @@
+/****************************************************************************
+  FileName      [ Cell.css ]
+  PackageName   [ src/components/css ]
+  Author        [ Cheng-Hua Lu, Chin-Yi Cheng ]
+  Synopsis      [ This file set the style of Cell. ]
+  Copyright     [ 2021 10 ]
+****************************************************************************/
+
 .cell{
     width : 30px;
     height : 30px;
