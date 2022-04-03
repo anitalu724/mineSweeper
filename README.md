@@ -12,3 +12,4 @@ Minesweeper is a single-player puzzle video game. The objective of the game is t
     * You can **right click** a square with the mouse to **place a flag** where you think a bomb is. This allows you to avoid that spot.
 
 ## Structures and Diagrams
+![all_figure](https://github.com/anitalu724/MutScape/blob/main/mineSweeper/img/structure.pdf?raw=true)
