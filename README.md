@@ -73,4 +73,10 @@ Minesweeper is a single-player puzzle video game. The objective of the game is t
     * If the two input values are invalid to build a new game which means that the number of mines is bigger than the square of board size, show the Error messages and change the value of input sliders into darkred.
     ![todo7](img/todo7.pdf?raw=true)
 
-### 
+## Cypress
+* We only provide a part of testcases
+* Almost all tags in ”Static pages” are tested in those provided testcases.
+* Passing all testcases definitely unequal to scoring 100% in hackathon. ⁃ There are some private tests
+* “npm run test” will perform all tests provided in this hackathon. 
+* You can try to implement more tests by cypress.
+
