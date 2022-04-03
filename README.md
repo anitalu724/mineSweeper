@@ -13,7 +13,7 @@ Minesweeper is a single-player puzzle video game. The objective of the game is t
     * You can **right click** a square with the mouse to **place a flag** where you think a bomb is. This allows you to avoid that spot.
 
 ## Structures and Diagrams
-![structure](img/structure.pdf)
+![structure](img/structure.pdf?raw=true)
 
 ## TODOs
 ### TODO 1 -- MineSweeper.js (10%)
@@ -31,21 +31,21 @@ Minesweeper is a single-player puzzle video game. The objective of the game is t
         - As a reminder, this TODO only contains the “Start Game” button and the reaction of pressing this button.
         - After you press the “Start Game” button, you will see the page as below.
         ![todo2](img/todo2.png)
-        ![todo2_stru](img/todo2_stru.pdf)
+        ![todo2_stru](img/todo2_stru.pdf?raw=true)
 
 ### TODO 3 -- createBoard.js (10%)
 * Counting the value of each cell in the Board to complete createBoard.js. (10%)
     - The value is the number of mines around the cell. The definition of the position is shown in the left figure below. 
     - Take the right figure below as an example. Since the value of “Top-Left” and “Right” of the yellow block is ‘💣’, so the value of the yellow block must be set to “2”.
     - You can use the function printBoard for testing.
-    ![todo3](img/todo3.pdf)
+    ![todo3](img/todo3.pdf?raw=true)
 
 ### TODO 4 -- Board.js (35%)
 1. Use the function in createBoard.js to implement ```freshBoard``` and ```restartGame```(5%)
 2. Implement the Board using the component Cell in Cell.js which has already done and Dashboard in Dashbard.js. (10%)
     * The board is built by 2-dimensional Cell. So, two ‘map’ and two ’return’ may be used to implement the board.
     * Follow the diagram in next page strictly.
-    ![todo4-1](img/todo4-1.pdf)
+    ![todo4-1](img/todo4-1.pdf?raw=true)
 3. Implement the function ```updateFlag``` of right click to flag a cell. (10%)
     * If the cell is already flagged, you should unflagged it.
     * Also remember to update the board and the ```remainFlagNum```. 
@@ -63,7 +63,7 @@ Minesweeper is a single-player puzzle video game. The objective of the game is t
 ### TODO 6 -- Modal.js (10%)
 * Implement the Modal. (10%)
     - The structure of Modal must follow the diagram in next page strictly.
-    ![todo6](img/todo6.pdf)
+    ![todo6](img/todo6.pdf?raw=true)
 
 ### TODO 7 -- HomePage Control (15%)
 * Try to implement a button called “Difficulty Adjustment” and its functions. (5% for structure, 5% for input value update, 5% for error checking)
@@ -71,6 +71,6 @@ Minesweeper is a single-player puzzle video game. The objective of the game is t
     * If you press the “Difficulty Adjustment” button, the control panel will show under the button. And then, if you press it again, the control panel will be invisible as expected.
     * In the control panel, you should implement two input sliders (see p.5 for detailed structure). The two input sliders can control the number of mines and the board size of the game. (1 ≤ mineNum ≤ 50, 1 ≤ boardSize ≤ 20)
     * If the two input values are invalid to build a new game which means that the number of mines is bigger than the square of board size, show the Error messages and change the value of input sliders into darkred.
-    ![todo7](img/todo7.pdf)
+    ![todo7](img/todo7.pdf?raw=true)
 
 ### 
