@@ -1,7 +1,7 @@
 node_modules
 yarn.lock
 package-lock.json
-
+package.json
 .DS_Store
 
 cypress/.DS_Store
