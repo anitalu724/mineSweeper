@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/mineSweeper/static/js/runtime~main.9001d0fd.js"
   },
   {
-    "revision": "f7c47f399e447974623d039c07beaa3d",
+    "revision": "f8a2badd77cb49e703bc05c4e3f0f61e",
     "url": "/mineSweeper/index.html"
   }
 ];
