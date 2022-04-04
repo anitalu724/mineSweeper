@@ -1,0 +1,13 @@
+{
+  "main.css": "/mineSweeper/static/css/main.ab352bf0.chunk.css",
+  "main.js": "/mineSweeper/static/js/main.c60f4850.chunk.js",
+  "main.js.map": "/mineSweeper/static/js/main.c60f4850.chunk.js.map",
+  "static/js/1.210d2bd2.chunk.js": "/mineSweeper/static/js/1.210d2bd2.chunk.js",
+  "static/js/1.210d2bd2.chunk.js.map": "/mineSweeper/static/js/1.210d2bd2.chunk.js.map",
+  "runtime~main.js": "/mineSweeper/static/js/runtime~main.9001d0fd.js",
+  "runtime~main.js.map": "/mineSweeper/static/js/runtime~main.9001d0fd.js.map",
+  "static/css/main.ab352bf0.chunk.css.map": "/mineSweeper/static/css/main.ab352bf0.chunk.css.map",
+  "index.html": "/mineSweeper/index.html",
+  "precache-manifest.e329685a859eb8f28c65a6a6888f2f0b.js": "/mineSweeper/precache-manifest.e329685a859eb8f28c65a6a6888f2f0b.js",
+  "service-worker.js": "/mineSweeper/service-worker.js"
+}
